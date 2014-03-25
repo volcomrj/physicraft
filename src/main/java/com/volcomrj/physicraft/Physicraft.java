@@ -37,6 +37,8 @@ public class Physicraft {
 	public static Item bronzeAxe;
 	public static Item bronzePickaxe;
 	public static Item bronzeShovel;
+	public static Item bronzeSword;
+	public static Item bronzeHoe;
 	
 	public static Block copperBlock;
 	public static Block copperOre;
@@ -67,6 +69,8 @@ public class Physicraft {
 		bronzeAxe = new CustomAxe(BRONZE,"bronzeAxe",1);
 		bronzePickaxe = new CustomPickaxe(BRONZE,"bronzePickaxe",1);
 		bronzeShovel = new CustomShovel(BRONZE,"bronzeShovel",1);
+		bronzeSword = new CustomSword(BRONZE,"bronzeSword",1);
+		bronzeHoe = new CustomHoe(BRONZE,"bronzeSword",1);
 		
 		
 		copperBlock.setHarvestLevel("pickaxe", 1);
@@ -75,7 +79,7 @@ public class Physicraft {
 		
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(copperIngot,9),new ItemStack(copperBlock));
-		GameRegistry.addShapelessRecipe(new ItemStack(bronzeIngot),new ItemStack(copperIngot),new ItemStack(tinIngot,3));
+		GameRegistry.addShapelessRecipe(new ItemStack(bronzeIngot),new ItemStack(copperIngot),new ItemStack(tinIngot),new ItemStack(tinIngot),new ItemStack(tinIngot));
 		
 		GameRegistry.addRecipe(new ItemStack(copperBlock), "xxx","xxx","xxx",
 				'x',new ItemStack(copperIngot));
