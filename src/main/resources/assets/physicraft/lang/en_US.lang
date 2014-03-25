@@ -1,0 +1,12 @@
+itemGroup.tabPhysicraft=Physicraft
+tile.physicraftBlock.name=Physicraft Block
+tile.copperBlock.name=Copper Block
+tile.copperOre.name=Copper Ore
+tile.tinOre.name=Tin Ore
+item.physicraftItem.name=Physicraft Item
+item.copperIngot.name=Copper Ingot
+item.bronzeAxe.name=Bronze Axe
+item.bronzePickaxe.name=Bronze Pickaxe
+item.bronzeShovel.name=Bronze Shovel
+item.tinIngot.name=Tin Ingot
+item.bronzeIngot.name=Bronze Ingot
