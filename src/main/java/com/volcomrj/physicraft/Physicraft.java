@@ -3,7 +3,6 @@ package com.volcomrj.physicraft;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -40,9 +39,15 @@ public class Physicraft {
 	public static Item bronzeSword;
 	public static Item bronzeHoe;
 	
+	/*public static Item bronzeHelmet;
+	public static Item bronzePlate;
+	public static Item bronzePants;
+	public static Item bronzeBoots;*/
+	
 	public static Block copperBlock;
 	public static Block copperOre;
 	public static Block tinOre;
+	
 	
 	public static CreativeTabs tabPhysicraft = new CreativeTabs("tabPhysicraft"){
 		public Item getTabIconItem()
@@ -52,7 +57,6 @@ public class Physicraft {
 	};
 	
 	public static final Item.ToolMaterial BRONZE = EnumHelper.addToolMaterial("BRONZE", 2, 192, 5.0F, 1.5F, 10);
-	
 	
 	
 	@EventHandler
@@ -70,7 +74,7 @@ public class Physicraft {
 		bronzePickaxe = new CustomPickaxe(BRONZE,"bronzePickaxe",1);
 		bronzeShovel = new CustomShovel(BRONZE,"bronzeShovel",1);
 		bronzeSword = new CustomSword(BRONZE,"bronzeSword",1);
-		bronzeHoe = new CustomHoe(BRONZE,"bronzeSword",1);
+		bronzeHoe = new CustomHoe(BRONZE,"bronzeHoe",1);
 		
 		
 		copperBlock.setHarvestLevel("pickaxe", 1);
@@ -95,9 +99,16 @@ public class Physicraft {
 		GameRegistry.addRecipe(new ItemStack(bronzeShovel)," x "," y "," y ",
 				'x',new ItemStack(bronzeIngot),'y',new ItemStack(Items.stick));
 		
+		GameRegistry.addRecipe(new ItemStack(bronzeSword)," x "," x "," y ",
+				'x',new ItemStack(bronzeIngot),'y',new ItemStack(Items.stick));
+		
+		GameRegistry.addRecipe(new ItemStack(bronzeHoe),"xx "," y "," y ",
+				'x',new ItemStack(bronzeIngot),'y',new ItemStack(Items.stick));
 		
 		GameRegistry.addSmelting(copperOre, new ItemStack(copperIngot), 0.7F);
 		GameRegistry.addSmelting(tinOre, new ItemStack(tinIngot), 0.7F);
+		
+		GameRegistry.registerWorldGenerator(new PhysicraftGen(), 0);
 		
 		proxy.registerRenderers();
 	}
